@@ -1,0 +1,254 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	place-items: center;
+}
+
+.pulse {
+	width: 30px;
+	height: 30px;
+	background-color: rebeccapurple;
+	border-radius: 50%;
+	position: relative;
+}
+
+.pulse::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: blueviolet;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+
+	/* animation: pulse 1000ms cubic-bezier(0.9, 0.7, 0.5, 0.9) infinite; */
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		transform: scale(1.4);
+		opacity: 0.4;
+	}
+}
+
+.divider {
+	width: 100%;
+	height: 6px;
+	border-radius: 4px;
+	background: lightgray;
+	margin-block: 12px;
+}
+
+.callout {
+	padding: 1rem;
+	margin-inline: 0;
+	background-color: #e8f0fe;
+	border: 1px solid #3740ff;
+	color: #272eb5;
+	max-width: 40rem;
+}
+
+.flow > * + * {
+	margin-block-start: 1rem;
+}
+
+.grower {
+	width: 200px;
+	height: 80px;
+	background-color: lightseagreen;
+	position: relative;
+	margin-inline: auto;
+
+	/* animation-name: grow; */
+	animation-duration: 2s;
+	/* animation-iteration-count: infinite; */
+	animation-timing-function: linear;
+}
+
+@keyframes grow {
+	from {
+		transform: scaleX(1);
+	}
+	to {
+		transform: scaleX(1.8);
+		background-color: darkturquoise;
+	}
+}
+
+.steps {
+	width: 50px;
+	height: 50px;
+	background-color: royalblue;
+
+	animation-name: move;
+	animation-duration: 2s;
+	animation-iteration-count: 3;
+	/* animation-direction: alternate; */
+}
+
+@keyframes move {
+	from {
+		transform: translateX(0px);
+	}
+	to {
+		transform: translateX(300px);
+	}
+}
+
+.toggle {
+	--metric-toggle-thumb-size: 1rem;
+	--metric-toggle-thumb-space: 0.25rem;
+
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+}
+
+.toggle_element {
+	width: 1em;
+	height: 1em;
+	position: absolute;
+	top: 50%;
+	right: 1rem;
+	transform: translateY(-50%);
+	opacity: 0;
+}
+
+.toggle_decor {
+	position: relative;
+	overflow: hidden;
+	width: calc(
+		var(--metric-toggle-thumb-size) * 2 + var(--metric-toggle-thumb-space) * 2
+	);
+	height: calc(
+		var(--metric-toggle-thumb-size) + var(--metric-toggle-thumb-space) * 2
+	);
+	background-color: #5f6368;
+	margin-inline-start: 0.5rem;
+	border-radius: var(--metric-toggle-thumb-size);
+	border: 1px solid #ffffff;
+}
+
+.toggle_thumb {
+	width: var(--metric-toggle-thumb-size);
+	height: var(--metric-toggle-thumb-size);
+	border-radius: 50%;
+	background: linear-gradient(
+			229.84deg,
+			rgba(255, 255, 255, 0) 14.29%,
+			rgba(48, 48, 48, 0.15) 81.82%
+		),
+		#ffffff;
+	box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3),
+		0px 2px 6px 2px rgba(60, 64, 67, 0.15);
+	position: absolute;
+	top: var(--metric-toggle-thumb-space);
+	left: var(--metric-toggle-thumb-space);
+	transform: none;
+	transition: transform 200ms cubic-bezier(1, 0, 0.55, 0.85);
+	will-change: transform;
+}
+
+:checked + .toggle_decor {
+	background: #3740ff;
+}
+
+:checked + .toggle_decor .toggle_thumb {
+	transform: translateX(var(--metric-toggle-thumb-size));
+}
+
+.animation-reduce-wrapper {
+	width: clamp(16rem, 90vw, 70rem);
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+	grid-gap: 1rem;
+	max-width: 700px;
+}
+
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 280px;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+}
+
+.animation-box {
+	padding: 1rem;
+	box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3),
+		0px 2px 6px 2px rgba(60, 64, 67, 0.15);
+	font-weight: 500;
+	text-align: center;
+}
+
+.animation-box h2 {
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	line-height: 1.1;
+}
+
+.face {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: 1px solid cornflowerblue;
+	backface-visibility: hidden;
+}
+
+.back {
+	display: grid;
+	place-items: center;
+	background-color: cornflowerblue;
+	transform: rotateY(180deg);
+}
+
+.card:is(:focus, :focus-within, :hover) {
+	transform: rotateY(180deg);
+}
+
+button {
+	border: 1px solid white;
+	background: none;
+	color: white;
+	font-size: 1.25rem;
+	padding: 1rem;
+	transition-duration: 0.25s;
+	cursor: pointer;
+}
+
+button:is(:hover, :focus) {
+	background: white;
+	color: cornflowerblue;
+}
+
+.reduce-motion .back {
+	transform: none;
+	opacity: 0;
+	pointer-events: none;
+	transition-duration: 0.6s;
+}
+
+.reduce-motion .card:is(:focus, :focus-within, :hover) {
+	transform: none;
+}
+
+.reduce-motion .card:is(:focus, :focus-within, :hover) .back {
+	opacity: 1;
+	pointer-events: all;
+}
