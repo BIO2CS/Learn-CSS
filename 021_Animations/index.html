@@ -1,122 +1,122 @@
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Animations</title>
-		<link rel="stylesheet" href="styles.css" />
-	</head>
-	<body>
-		<div class="pulse"></div>
-		<div class="divider"></div>
-		<main>
-			<div class="wrapper">
-				<article class="flow">
-					<h1>Named animation timing functions</h1>
-					<figure class="callout">
-						<p>
-							Use the dropdown to change timing function to see how much they
-							affect the overall animation.
-						</p>
-					</figure>
-					<label>
-						Change timing function
-						<select name="timing-function">
-							<option value="linear">linear</option>
-							<option value="ease">ease</option>
-							<option value="ease-in">ease-in</option>
-							<option value="ease-out">ease-out</option>
-							<option value="ease-in-out">ease-in-out</option>
-						</select>
-					</label>
-					<div class="box grower"></div>
-				</article>
-			</div>
-		</main>
-		<div class="divider"></div>
-		<main>
-			<article class="flow">
-				<h1>Animation steps</h1>
-				<figure class="callout">
-					<p>
-						Switch the toggle on to enable the <code>steps</code> timing
-						function. Notice how even though there are only two keyframes, 10
-						steps are created which results in staggered effect.
-					</p>
-				</figure>
-				<label class="toggle" for="toggle-element">
-					<span class="toggle_label">Turn steps on</span>
-					<input
-						type="checkbox"
-						role="switch"
-						class="toggle_element"
-						id="toggle-element"
-					/>
-					<div class="toggle_decor" aria-hidden="true">
-						<div class="toggle_thumb"></div>
-					</div>
-				</label>
-				<div class="box-step steps"></div>
-			</article>
-		</main>
-		<div class="divider"></div>
-		<main>
-			<div class="animation-reduce-wrapper">
-				<article class="flow">
-					<h1>Honoring reduced motion preference</h1>
-					<figure class="callout">
-						<p>
-							Toggle the checkbox to see how you can reduce motion, but still
-							present a nice animation.
-						</p>
-					</figure>
-					<label for="animation-checkbox">
-						Reduce animation
-						<input type="checkbox" role="switch" id="animation-checkbox" />
-					</label>
-					<div class="container">
-						<div class="card" tabindex="0">
-							<div class="animation-box face front flow">
-								<h2>Lorem Ipsum Dolor</h2>
-								<img
-									src="https://source.unsplash.com/SVVCP23JFyg/200x100"
-									alt="Coloured smoke"
-								/>
-								<p>By Author Name</p>
-							</div>
-							<div class="face back">
-								<button>Read More</button>
-							</div>
-						</div>
-						<div class="card" tabindex="0">
-							<div class="animation-box face front flow">
-								<h2>Lorem Ipsum Dolor</h2>
-								<img
-									src="https://source.unsplash.com/E8Ufcyxz514/200x100"
-									alt="Coloured waves"
-								/>
-								<p>By Author Name</p>
-							</div>
-							<div class="face back">
-								<button>Read More</button>
-							</div>
-						</div>
-						<div class="card" tabindex="0">
-							<div class="animation-box face front flow">
-								<h2>Lorem Ipsum Dolor</h2>
-								<img
-									src="https://source.unsplash.com/y2lCFKGZEXI/200x100"
-									alt="More coloured smoke"
-								/>
-								<p>By Author Name</p>
-							</div>
-							<div class="face back">
-								<button>Read More</button>
-							</div>
-						</div>
-					</div>
-				</article>
-			</div>
-		</main>
-		<script src="script.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animations</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="pulse"></div>
+    <div class="divider"></div>
+    <main>
+      <div class="wrapper">
+        <article class="flow">
+          <h1>Named animation timing functions</h1>
+          <figure class="callout">
+            <p>
+              Use the dropdown to change timing function to see how much they
+              affect the overall animation.
+            </p>
+          </figure>
+          <label>
+            Change timing function
+            <select name="timing-function">
+              <option value="linear">linear</option>
+              <option value="ease">ease</option>
+              <option value="ease-in">ease-in</option>
+              <option value="ease-out">ease-out</option>
+              <option value="ease-in-out">ease-in-out</option>
+            </select>
+          </label>
+          <div class="box grower"></div>
+        </article>
+      </div>
+    </main>
+    <div class="divider"></div>
+    <main>
+      <article class="flow">
+        <h1>Animation steps</h1>
+        <figure class="callout">
+          <p>
+            Switch the toggle on to enable the <code>steps</code> timing
+            function. Notice how even though there are only two keyframes, 10
+            steps are created which results in staggered effect.
+          </p>
+        </figure>
+        <label class="toggle" for="toggle-element">
+          <span class="toggle_label">Turn steps on</span>
+          <input
+            type="checkbox"
+            role="switch"
+            class="toggle_element"
+            id="toggle-element"
+          />
+          <div class="toggle_decor" aria-hidden="true">
+            <div class="toggle_thumb"></div>
+          </div>
+        </label>
+        <div class="box-step steps"></div>
+      </article>
+    </main>
+    <div class="divider"></div>
+    <main>
+      <div class="animation-reduce-wrapper">
+        <article class="flow">
+          <h1>Honoring reduced motion preference</h1>
+          <figure class="callout">
+            <p>
+              Toggle the checkbox to see how you can reduce motion, but still
+              present a nice animation.
+            </p>
+          </figure>
+          <label for="animation-checkbox">
+            Reduce animation
+            <input type="checkbox" role="switch" id="animation-checkbox" />
+          </label>
+          <div class="container">
+            <div class="card" tabindex="0">
+              <div class="animation-box face front flow">
+                <h2>Lorem Ipsum Dolor</h2>
+                <img
+                  src="https://source.unsplash.com/SVVCP23JFyg/200x100"
+                  alt="Coloured smoke"
+                />
+                <p>By Author Name</p>
+              </div>
+              <div class="face back">
+                <button>Read More</button>
+              </div>
+            </div>
+            <div class="card" tabindex="0">
+              <div class="animation-box face front flow">
+                <h2>Lorem Ipsum Dolor</h2>
+                <img
+                  src="https://source.unsplash.com/E8Ufcyxz514/200x100"
+                  alt="Coloured waves"
+                />
+                <p>By Author Name</p>
+              </div>
+              <div class="face back">
+                <button>Read More</button>
+              </div>
+            </div>
+            <div class="card" tabindex="0">
+              <div class="animation-box face front flow">
+                <h2>Lorem Ipsum Dolor</h2>
+                <img
+                  src="https://source.unsplash.com/y2lCFKGZEXI/200x100"
+                  alt="More coloured smoke"
+                />
+                <p>By Author Name</p>
+              </div>
+              <div class="face back">
+                <button>Read More</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
